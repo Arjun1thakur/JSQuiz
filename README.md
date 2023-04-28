@@ -1,5 +1,50 @@
 # JSQuiz
 
+##  1. How to check if an object is an array or not?
+```javascript
+//  By using  Array.isArray()
+// when we want check object present inside of array or not
+let arr=[1,null,undefined,"Arjun",NaN,true,{"name":"Arjun"}]
+
+let check=()=>{
+    for(let i=0;i<arr.length;i++){
+        if(typeof arr[i]==typeof {}){
+            console.log(true)
+        }else{
+            console.log(false)
+        }
+    }
+}
+check()
+```
+##  2. How to check whether a key exist in a JavaScript object or not.
+```javascript
+let obj={
+    name:"ajju thakur",
+    Batch:"EA18"
+}
+//  check when you about key
+console.log(obj.hasOwnProperty("name"))
+
+// When you don't know about key 
+console.log(Object.keys(obj))
+```
+## 3.  Write code for merge two JavaScript Object dynamically using inbuilt and without inbuilt method.
+```javascript
+var person = {
+        name : 'John',
+        age  : 24
+}
+
+var location = {
+        addressLine1 : 'Some Location x',
+        addressLine2 : 'Some Location y',
+        city : 'NewYork'
+}
+let newData={...person,...location}
+console.log(newData);
+```
+
 ##  13. How to find duplicate elements in a given array?
 ```javascript
 let Check=(arr)=>{
