@@ -150,4 +150,84 @@ let check=(data)=>{
 }
 console.log(check('Helo'))
  ```
+ ## 23. Create a function that will convert from Celsius to Fahrenheit
+ ```javascript
+ let temp=(n)=>{
+    return (n*(9/5))+32
+}
+console.log(`${temp(10)}F`)
+```
+## 24. Create a function that will find the nth Fibonacci number using recursion
+```javascript
+let FibonacciCheck=(arr)=>{
+    let count=0
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]+arr[i+1]==arr[i+2]){
+            count++
+        }
+    }
+    if((arr.length-2)==count){
+        return true
+    }else{
+        return false
+    }
+}
+console.log(FibonacciCheck([0,1,1,2,3,5,8]))
+```
 
+## 25. Create a function that will receive two arrays of numbers as arguments and return an array composed of all the numbers that are either in the first array or second array but not in both
+ 
+```javascript
+
+let a=[1,2,3,4,5,6]
+let b=[6,7,8,9,10]
+let check=(a,b)=>{
+    let c=new Set([...a,...b])
+    return [...c]
+}
+
+console.log(check(a,b))
+```
+##  26. Create a function to return the longest word from the string let text = ""Create a function to return the longest word(s) in a sentance
+```javascript
+let CheckString=(str)=>{
+    let line= str.split(' ')
+    let arr=[]
+    
+    for(let i=0;i<line.length;i++){
+        arr.push(line[i].length)
+    }
+    let max=Math.max(...arr)
+    for(let i=0;i<line.length;i++){
+        if(line[i].length==max){
+            return line[i]
+        }
+    }
+}
+console.log(CheckString(str))
+```
+
+##  27. Output of this?
+```javascript
+var Y = 1;
+if (function F(){})
+{
+Y += typeof F;
+
+}
+console.log(Y);
+```
+
+## 28. Output of this?
+```javascript
+(()=>{
+    var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== undefined));
+console.log("b defined? " + (typeof b !== undefined));
+```
+## 29. Write a code to find the unique word from the string?
+ 
+         INPUT:"HELLO HELLO BYE BYE HI"
+         OUTPUT:HI
+ 
