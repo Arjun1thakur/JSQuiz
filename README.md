@@ -228,6 +228,19 @@ console.log("b defined? " + (typeof b !== undefined));
 ```
 ## 29. Write a code to find the unique word from the string?
  
-         INPUT:"HELLO HELLO BYE BYE HI"
-         OUTPUT:HI
+     INPUT:"HELLO HELLO BYE BYE HI"
+     OUTPUT:HI
  
+ ```javascript
+ let unique=(str)=>{
+    let arr=[]
+    for (let i=0; i<str.length; i++){
+        if(str.indexOf(str[i])===str.lastIndexOf(str[i])){
+            arr.push(str[i])
+        }
+    }
+    return arr
+
+}
+console.log(...unique(str.split(' ')))
+```
