@@ -41,8 +41,140 @@ var location = {
         addressLine2 : 'Some Location y',
         city : 'NewYork'
 }
+// method : 1
 let newData={...person,...location}
 console.log(newData);
+
+// method : 2
+let combine=(person,location)=>{
+    let data={}
+    for(let key in person){
+        if(person.hasOwnProperty(key)){
+            data[key]=person[key]
+        }
+    }
+    for(let key in location){
+        if(location.hasOwnProperty(key)){
+            data[key]=location[key]
+        }
+    }
+    return data
+}
+console.log(combine(person,location));
+```
+##  4. What is would be the output of the following
+```javascript
+(function() {
+	var objA = {
+		foo: 'foo',
+		bar: 'bar'
+	};
+	var objB = {
+		foo: 'foo',
+		bar: 'bar'
+	};
+	console.log(objA == objB);
+	console.log(objA === objB);
+}())
+```
+
+## 5. How do you print numbers with commas as thousand separators
+```javascript
+let no=''
+for (let i = 0; i < 1000; i++) {
+    no+=i+','
+}
+console.log(no)
+```
+## 6. How can we delete an element at a specific index in an array.
+```javascript
+let arr=[1,2,3,4,5,6,7,8]
+let cut=(n)=>{
+    let copy=[]
+    arr.forEach((data,index)=>{
+        if(index!==n){
+            copy.push(data)
+        }
+    })
+    return copy
+}
+console.log(cut(5))
+```
+## 7.  Write a code to find the second largest value in an array.
+```javascript
+let arr=[1,2,3,4,5,6,7,8]
+
+let findSecondLargest=(arr)=>{
+    let sortedArr = arr.sort((a, b) => b - a);
+    let secondLargest = sortedArr[1];
+    return secondLargest;
+  }
+ console.log(findSecondLargest())
+ ```
+ 
+## 8. How to check the no. of occurrence of a character in a string.
+```javascript
+let search=(char,str)=>{
+    let count =0
+    for(let i=0;i<str.length;i++){
+        if(str[i]===char){
+            count++
+        }
+    }
+    return count
+}
+console.log(search("P","PlacementsPractice"))
+```
+
+## 9. How can we delete an element at a specific index in an array.
+```javascript
+function User(name) {
+  this.name = name || "JsGeeks";
+}
+
+var person = new User("xyz")["location"] = "USA";
+console.log(person)
+```
+
+## 10. Output of this code :
+```javascript
+var employeeId = '1234abe';
+(function() {
+	console.log(employeeId);
+	var employeeId = '122345';
+	(function() {
+		var employeeId = 'abc1234';
+	}());
+}());
+```
+
+## 11. What are the ways by which we can create object in JavaScript ?
+```javascript
+//  Object constructor:
+var object = new Object();
+
+//Object literal syntax:
+var object = {
+     name: "Arjun",
+};
+
+//  Function constructor:
+function Obj(name) {
+  this.name = name;
+}
+var object = new Obj("Arjun");
+```
+
+## 12. Output of this code :
+```javascript
+var employeeId = '1234abe';
+(function() {
+	console.log(employeeId);
+	var employeeId = '122345';
+	(function() {
+		var employeeId = 'abc1234';
+	}());
+}())
 ```
 
 ##  13. How to find duplicate elements in a given array?
