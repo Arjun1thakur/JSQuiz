@@ -421,3 +421,76 @@ console.log("b defined? " + (typeof b !== undefined));
 }
 console.log(...unique(str.split(' ')))
 ```
+## 30. Write a function that takes a number as input and returns true if the number is prime, false otherwise.
+```javascript
+let func=(n)=>{
+  if(n<=1){
+    return false
+  }
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+  return true
+
+}
+console.log(func(7))
+```
+
+## 31. Write a function that takes two arrays as input and returns a new array that contains all the elements of both arrays, but without any duplicates.
+```javascript
+let ArrayFunc=(a,b)=>{
+    return [...new Set([...a,...b])]
+}
+console.log(ArrayFunc([1,2,3,4,5,6],[6,7,8,9,10]))
+```
+## 32. Write a function that takes a string as input and returns true if the string is a palindrome, false otherwise.
+```javascript
+let palindrome=(str)=>{
+  let copy=[...str].reverse().join('')
+  if(copy===str){
+    return true
+  }else{
+    return false
+  }
+}
+console.log(palindrome("lol"))
+```
+## 33. Write a function that takes a sorted array of integers as input and returns the index of the first occurrence of a given number.
+```javascript
+let firstOccurrence=(arr)=>{
+  let val=0
+  for(let i=0;i<arr.length;i++){
+    for(let j=i+1;j<arr.length;j++){
+      if(arr[i]==arr[j]){
+        val=arr[i]
+      }
+    }
+  }
+  return arr.indexOf(val)
+}
+console.log(firstOccurrence([1,2,3,4,5,6,7,5,8]));
+```
+## 34. Write a function that takes an array of integers as input and returns the highest product that can be obtained by multiplying any three integers in the array.
+```javascript
+let highestProduct=(arr)=>{
+  let sortedArr=arr.sort((a,b)=>a-b)
+  let ele=sortedArr.slice(-3)
+  let val=ele.reduce((a,b)=>a*b)
+  return val
+}
+console.log(highestProduct([1,2,3,4,5,6,7]))
+```
+## 35. Write a function that takes a number as input and returns the Fibonacci sequence up to that number.
+```javascript
+let Fibonacci=(n)=>{
+  let fib=[0,1]
+  for(let i=0;i<n-2;i++){
+    let sum=fib[fib.length-1]+fib[fib.length-2]
+    fib.push(sum)
+  }
+  return fib
+}
+console.log(Fibonacci(10));
+```
